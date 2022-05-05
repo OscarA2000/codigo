@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dados</title>
+    <link rel="stylesheet" href="">
+    <h1>deves reiniciar para jugar</h1>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>actualiza</h1>
+        <div class="dado">
+            <p>jugador 1</p>
+            <img class="img1" src="imagenes/lado6.jpg">
+        </div>
+
+        <div class="dado">
+            <p>jugador 2</p>
+            <img class="img2" src="imagenes/lado6.jpg">
+        </div>
+
+    </div>
+<script src="index.js"></script>
+    
+</body>
+</html>
+var numero1=Math.floor(Math.random()*6)+1;
+var numero2=Math.floor(Math.random()*6)+1;
+alert(numero1);
+alert(numero2);
+
+var fuente1="imagenes/lado"+numero1+".jpg";
+var fuente2="imagenes/lado"+numero2+".jpg";
+
+document.querySelector('.img1').setAttribute('src', fuente1);
+document.querySelector('.img2').setAttribute('src', fuente2);
+
+if(numero1>numero2){
+    document.querySelector('h1').textContent="gana 1";
+}
+else if(numero2>numero1){
+    document.querySelector('h1').textContent="gana 2";
+}
+else if(numero2=numero1){
+    document.querySelector('h1').textContent="empate";
+}
